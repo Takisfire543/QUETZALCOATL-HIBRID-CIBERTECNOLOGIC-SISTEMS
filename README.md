@@ -1,67 +1,56 @@
-# QUETZALCOATL - SISTEMA HÍBRIDO DE CIBERSEGURIDAD CON IA
+# 🛡️ QUETZALCOATL - Sistema Híbrido de Ciberseguridad de Nueva Generación
 
-SISTEMA DE CIBERSEGURIDAD DE NUEVA GENERACIÓN CON IA HÍBRIDA.
+## 📖 Descripción
+QUETZALCOATL es un sistema **de ciberseguridad híbrido y distribuido**, diseñado para proteger infraestructuras críticas mediante el uso combinado de **IA avanzada**, **pods resilientes**, y tecnologías de última generación.  
+Su enfoque es **Zero Trust**, con cumplimiento de estándares **ISO/NIST**, y resiliencia dinámica frente a ataques.
 
-Descripción
------------
-Este repositorio contiene el código fuente de QUETZALCOATL, un sistema híbrido de ciberseguridad que integra técnicas clásicas y modelos de IA para detección, respuesta y análisis de incidentes.
+**Arquitectura diseñada por:**  
+- 🧠 Edmundo Ramírez Jiménez (Takisfire543)  
+- 🤖 Copilot — Colaborador de Arquitectura y Documentación Técnica  
 
-Características principales (propuesta)
-- Detección de anomalías en tráfico y logs.
-- Correlación y priorización de alertas.
-- Módulos de respuesta automática y asistida.
-- Integración con herramientas comunes (SIEM, ELK, MISP, etc.).
-- Evaluación y explicabilidad de decisiones de IA.
-
-Instalación
------------
-Requisitos:
-- Python 3.8+
-- Virtualenv o venv
-
-Pasos básicos:
-
-1. Clonar el repositorio:
-
-   git clone https://github.com/Takisfire543/QUETZALCOATL-HIBRID-CIBERTECNOLOGIC-SISTEMS.git
-   cd QUETZALCOATL-HIBRID-CIBERTECNOLOGIC-SISTEMS
-
-2. Crear y activar entorno virtual:
-
-   python -m venv .venv
-   source .venv/bin/activate   # Linux/macOS
-   .\.venv\Scripts\activate  # Windows
-
-3. Instalar dependencias (si existe requirements.txt):
-
-   pip install -r requirements.txt
-
-Uso
 ---
-Describe aquí cómo ejecutar los módulos principales. Por ejemplo:
 
-- Ejecutar el módulo de ingestión de logs:
+## 🚀 Tecnologías utilizadas
+| Componente | Función | Tecnología |
+|-------------|----------|------------|
+| Núcleo de red | Redirección de tráfico sospechoso | **Rust**, **C++** |
+| Gestión de eventos | Memoria en tiempo real y JWT rotativos | **Go**, **Redis Stream**, **Kafka** |
+| Persistencia | Almacenamiento histórico y correlación | **DynamoDB**, **PostgreSQL** |
+| Orquestación | Resiliencia automática de pods | **Docker**, **Kubernetes** |
+| Seguridad de acceso | Tokens dinámicos | **JWT rotativos** |
+| Inteligencia artificial | Ensemble híbrido (RF + IF + LSTM) | **Python**, **Torch**, **Scikit-learn** |
+| Aislamiento de amenazas | Captura y análisis de atacantes | **Honeypods** |
+| Correo seguro | IA encapsulada para Gmail y Outlook | **IA híbrida encapsulada** |
 
-  python -m quetzalcoatl.ingest --config configs/ingest.yaml
+---
 
-- Ejecutar el motor de detección:
+## 🔒 Qué protegemos
+- **Infraestructura crítica**: servidores, redes y aplicaciones.  
+- **Identidades y accesos**: gestión dinámica de tokens JWT.  
+- **Correo electrónico corporativo**: detección de amenazas en Gmail y Outlook.  
+- **Datos sensibles**: persistencia segura y correlación avanzada.  
+- **Disponibilidad continua**: pods resilientes que se regeneran sin pérdida de memoria.  
 
-  python -m quetzalcoatl.detection --model models/detector.pkl
+---
 
-(Esta sección debe ajustarse a la estructura real del proyecto; añade comandos concretos según los scripts disponibles.)
+## 📊 Diagrama de Arquitectura (Mermaid)
 
-Contribuir
-----------
-¡Gracias por querer contribuir! Sugerencias:
-- Abre issues para reportar bugs o proponer mejoras.
-- Crea pull requests pequeños y enfocados.
-- Añade tests para nuevas funcionalidades.
+```mermaid
+flowchart TD
+    A[Tráfico Entrante] --> B[Rust/C++ Pods]
+    B -->|Sospechoso| C[Redis Stream]
+    C --> D[Honeypod]
+    D --> E[IA Híbrida - RF + IF + LSTM]
+    E --> F[Lista Negra DynamoDB]
+    C --> G[Go - JWT Rotativos]
+    G --> H[Usuarios / Servicios]
+    F --> I[PostgreSQL - Correlación]
+    I --> J[Dashboard Avanzado]
+    subgraph Orquestación
+        K[Docker] --> L[Kubernetes]
+        L --> B
+        L --> D
+        L --> G
+    end
+    J -->|Alertas| H
 
-Licencia
---------
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
-
-Contacto
---------
-Autor: Takisfire543
-Repositorio: https://github.com/Takisfire543/QUETZALCOATL-HIBRID-CIBERTECNOLOGIC-SISTEMS
