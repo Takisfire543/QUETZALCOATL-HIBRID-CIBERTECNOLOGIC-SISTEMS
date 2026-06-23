@@ -11,46 +11,44 @@ Su enfoque es **Zero Trust**, con cumplimiento de estándares **ISO/NIST**, y re
 ---
 
 ## 🚀 Tecnologías utilizadas
-| Componente | Función | Tecnología |
-|-------------|----------|------------|
-| Núcleo de red | Redirección de tráfico sospechoso | **Rust**, **C++** |
-| Gestión de eventos | Memoria en tiempo real y JWT rotativos | **Go**, **Redis Stream**, **Kafka** |
-| Persistencia | Almacenamiento histórico y correlación | **DynamoDB**, **PostgreSQL** |
-| Orquestación | Resiliencia automática de pods | **Docker**, **Kubernetes** |
-| Seguridad de acceso | Tokens dinámicos | **JWT rotativos** |
-| Inteligencia artificial | Ensemble híbrido (RF + IF + LSTM) | **Python**, **Torch**, **Scikit-learn** |
-| Aislamiento de amenazas | Captura y análisis de atacantes | **Honeypods** |
-| Correo seguro | IA encapsulada para Gmail y Outlook | **IA híbrida encapsulada** |
+- **Rust / C++** → Núcleo de red y redirección de tráfico.  
+- **Go + Redis Stream + Kafka** → Gestión de JWT rotativos y memoria en tiempo real.  
+- **Python (IA híbrida)** → Random Forest, Isolation Forest, LSTM, Ensemble.  
+- **Docker + Kubernetes** → Orquestación y resiliencia automática de pods.  
+- **DynamoDB + PostgreSQL** → Persistencia y correlación avanzada.  
+- **Honeypods** → Aislamiento de atacantes y recopilación de inteligencia.  
+- **Módulo de correo (Gmail/Outlook)** → IA encapsulada para detección de amenazas.  
 
 ---
 
-## 🔒 Qué protegemos
-- **Infraestructura crítica**: servidores, redes y aplicaciones.  
-- **Identidades y accesos**: gestión dinámica de tokens JWT.  
-- **Correo electrónico corporativo**: detección de amenazas en Gmail y Outlook.  
-- **Datos sensibles**: persistencia segura y correlación avanzada.  
-- **Disponibilidad continua**: pods resilientes que se regeneran sin pérdida de memoria.  
+## 🧠 División de Pods IA Híbrida
+La IA se divide en **6 pods principales** dentro de Kubernetes:
+
+- **[Pod RF](ca://s?q=Pod_Random_Forest)** → Clasificación de tráfico conocido.  
+- **[Pod IF](ca://s?q=Pod_Isolation_Forest)** → Detección de anomalías.  
+- **[Pod LSTM](ca://s?q=Pod_LSTM_para_seguridad)** → Análisis de secuencias de intentos de ataque.  
+- **[Pod Ensemble](ca://s?q=Pod_Ensemble_para_seguridad)** → Combina resultados con pesos dinámicos.  
+- **[Pod SHAP](ca://s?q=Pod_SHAP_para_explicabilidad)** → Explicabilidad de decisiones.  
+- **[Pod Drift Detector](ca://s?q=Pod_Drift_Detector)** → Monitoreo de deriva en datos.  
 
 ---
 
-## 📊 Diagrama de Arquitectura (Mermaid)
+## 📊 Diagrama IA Híbrida (Mermaid)
 
 ```mermaid
 flowchart TD
-    A[Tráfico Entrante] --> B[Rust/C++ Pods]
-    B -->|Sospechoso| C[Redis Stream]
-    C --> D[Honeypod]
-    D --> E[IA Híbrida - RF + IF + LSTM]
-    E --> F[Lista Negra DynamoDB]
-    C --> G[Go - JWT Rotativos]
-    G --> H[Usuarios / Servicios]
-    F --> I[PostgreSQL - Correlación]
-    I --> J[Dashboard Avanzado]
-    subgraph Orquestación
-        K[Docker] --> L[Kubernetes]
-        L --> B
-        L --> D
-        L --> G
-    end
-    J -->|Alertas| H
+    A[Datos de tráfico] --> B[Pod RF - Random Forest]
+    A --> C[Pod IF - Isolation Forest]
+    A --> D[Pod LSTM - Red Neuronal]
+
+    B --> E[Pod Ensemble]
+    C --> E[Pod Ensemble]
+    D --> E[Pod Ensemble]
+
+    E --> F[Pod SHAP - Explicabilidad]
+    E --> G[Pod Drift Detector]
+
+    F --> H[Analistas / Dashboard]
+    G --> H[Analistas / Dashboard]
+
 
